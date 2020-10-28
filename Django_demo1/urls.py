@@ -24,4 +24,6 @@ urlpatterns = [
     re_path('login2/([0-9]{4})/$', views.login2, name='reverse_login2'),
     re_path('login3/(?P<year>[0-9]{4})/$', views.login3, name='reverse_login3'),
     path('model/', include('TestModel.urls')),
+    path('add_emp/', views.add_emp),
+    path('add_emp2/', views.add_emp2),
 ]

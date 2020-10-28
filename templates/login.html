@@ -6,11 +6,28 @@
 </head>
 <body>
 <h1>反向解析</h1>
+
 <h3>用户登录</h3>
 <form action="{% url 'reverse_login' %}" method="post">
     {% csrf_token %}
     <p>用户名：<input type="text" name="username"></p>
     <p>密码：<input type="password" name="pwd"></p>
+    <input type="submit">
+</form>
+
+<h3>用户登录：正则路径（无名分组）</h3>
+<form action="{% url 'reverse_login2' 2020 %}" method="post">
+    {% csrf_token %}
+    <p>用户名：<input type="text" name="username2"></p>
+    <p>密码：<input type="password" name="pwd2"></p>
+    <input type="submit">
+</form>
+
+<h3>用户登录：正则路径（有名分组）</h3>
+<form action="{% url 'reverse_login3' 2021 %}" method="post">
+    {% csrf_token %}
+    <p>用户名：<input type="text" name="username2"></p>
+    <p>密码：<input type="password" name="pwd2"></p>
     <input type="submit">
 </form>
 

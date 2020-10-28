@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -51,3 +52,16 @@ def date(request, year, month):
     print(year,month) # 一个形参代表路径中一个分组的内容，按关键字对应匹配
     date = '日期：'+ year + month
     return HttpResponse(date)
+
+def login(request):
+    print('命名空间')
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    else:
+        username = request.POST.get('username')
+        pwd = request.POST.get('pwd')
+        if username == 'root' and pwd == '123':
+            return render(request, 'success.html',{'username':username})
+        else:
+            url = reverse('app01:reverse_login')
+            return redirect(url)

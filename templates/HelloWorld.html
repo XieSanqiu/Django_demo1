@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<h1>{{ hello_world }}</h1>
+
+<h2>{{ list }}</h2>
+<h2>{{ list.1 }}</h2>
+
+<h2>{{ dict }}</h2>
+<h2>{{ dict.dict_name }}</h2>
+{#<h2>{{ dict.dict_value }}</h2> #} {% comment %}没有这种表达{% endcomment %}
+
+<h2>{{ filter_safe|safe }}</h2>
+
+<h2>
+    {% if num >= 90 and num <= 100 %}
+        优秀
+    {% elif num >= 60 and num < 90 %}
+        合格
+    {% else %}
+        不合格
+    {% endif %}
+</h2>
+
+<h2>
+    {% for type in types %}
+        {{ type }}
+    {% endfor %}
+</h2>
+<h2>
+    {% for type in types reversed%}
+        {{ type }}
+    {% endfor %}
+</h2>
+
+<h2>
+    {% for key, value in student.items %}
+        {{ key }}:{{ value }}<br>
+    {% endfor %}
+</h2>
+
+<h2>
+    {% for i in letters %}
+        {{ i }}
+{#    {{ forloop.counter }}#}
+{#    {{ forloop.counter0 }}#}
+{#    {{ forloop.revcounter }}#}
+{#    {{ forloop.revcounter0 }}#}
+    {{ forloop.first }}
+{#    {{ forloop.last }}#}
+{% endfor %}
+</h2>
+
+</body>
+</html>

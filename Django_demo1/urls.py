@@ -29,4 +29,5 @@ urlpatterns = [
     path('add_emp2/', views.add_emp2),
     path('AuthTest/', include('AuthTest.urls')),
     path('accounts/login/', auth_views.auth_login),
+    path('CookieSession/', include(('CookieSession.urls', 'CookieSession'))),
 ]

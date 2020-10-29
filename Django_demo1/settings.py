@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app01',
     'TestModel',
     'AuthTest',
+    'CookieSession',
 ]
 
 MIDDLEWARE = [

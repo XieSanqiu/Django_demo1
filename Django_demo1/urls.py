@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from Django_demo1 import views
+from AuthTest import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app01/', include(('app01.urls', 'app01'))), #加上名称空间 app01
@@ -26,4 +27,6 @@ urlpatterns = [
     path('model/', include('TestModel.urls')),
     path('add_emp/', views.add_emp),
     path('add_emp2/', views.add_emp2),
+    path('AuthTest/', include('AuthTest.urls')),
+    path('accounts/login/', auth_views.auth_login),
 ]
